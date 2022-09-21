@@ -4,7 +4,11 @@
 - name: Verify
   hosts: all
   gather_facts: false
+  
   tasks:
-  - name: Example assertion
-    ansible.builtin.assert:
-      that: true
+  - name: Verify if we can reach GOOGLE!
+    ansible.builtin.uri:
+      url: https://google.com
+      status_code:
+        - 200
+      return_content: true
