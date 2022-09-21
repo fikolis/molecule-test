@@ -15,7 +15,6 @@
         state: restarted
 
   pre_tasks:
-    - name: Override Apache vars for RedHat.
       ansible.builtin.set_fact:
         apache_package: httpd
         apache_service: httpd
